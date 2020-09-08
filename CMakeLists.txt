@@ -53,14 +53,21 @@ add_executable(${VITA_APPNAME}
 )
 
 target_link_libraries(${VITA_APPNAME}
-  SDL2
   SDL2_mixer
+  SDL2
+  vita2d
   vorbisfile
   vorbis
   ogg
-  vita2d
+  mpg123
+  mikmod
+  modplug
+  FLAC
+  stdc++
   m
+  SceAppMgr_stub
   SceAudio_stub
+  SceCommonDialog_stub
   SceCtrl_stub
   SceDisplay_stub
   SceGxm_stub
