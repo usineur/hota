@@ -843,17 +843,7 @@ int play_anm(anm_file_t *anm, int n, int skippable)
 void draw_screen()
 {
 #if SDL_VERSION_ATLEAST(2, 0, 0)
-	void *pixels;
-	int pitch;
-
 	SDL_BlitSurface(screen, NULL, _screen, NULL);
-	SDL_LockTexture(texture, NULL, &pixels, &pitch);
-	SDL_ConvertPixels(_screen->w, _screen->h,
-		_screen->format->format,
-		_screen->pixels, _screen->pitch,
-		SDL_PIXELFORMAT_RGB888,
-		pixels, pitch);
-	SDL_UnlockTexture(texture);
 	SDL_UpdateTexture(texture, NULL, _screen->pixels, _screen->pitch);
 	SDL_RenderClear(renderer);
 #ifdef __SWITCH__
