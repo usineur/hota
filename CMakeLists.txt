@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 if( NOT DEFINED CMAKE_TOOLCHAIN_FILE )
-  set(CMAKE_TOOLCHAIN_FILE "Toolchain.cmake" CACHE PATH "Toolchain file")
+  set(CMAKE_TOOLCHAIN_FILE "/opt/devkitpro/cmake/Switch.cmake" CACHE PATH "Toolchain file")
 endif()
 
 project(HOTA)
@@ -42,7 +42,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}.elf
   z
   nx
   m
- -specs=${DEVKITPRO}/libnx/switch.specs
 )
 
 add_custom_target(${CMAKE_PROJECT_NAME}.nro
